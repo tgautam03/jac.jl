@@ -1,2 +1,2 @@
 # JAC
-An Automatic Differentiation Library from Scratch in Julia.
+A Reverse-mode Automatic Differentiation Library from Scratch in Julia.
