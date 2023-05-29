@@ -14,7 +14,12 @@ mutable struct Tensor
     end
 
     # Constructor to create Tensor using operations (for intermediate nodes)
-    function Tensor(val::AbstractArray, parents::Vector{Tensor}, chain_rules::Vector)
-        new(val, parents, chain_rules)
+    function Tensor(val::Union{Number, AbstractArray}, parents::Vector{Tensor}, chain_rules::Vector)
+        if typeof(val) <: Number
+            val = [val][:,:] # Storing Scalar as an Array
+            new(val, parents, chain_rules)
+        else
+            new(val, parents, chain_rules)
+        end
     end
 end
