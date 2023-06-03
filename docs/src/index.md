@@ -21,16 +21,16 @@ A nice way to visualise these operations is on a **computation graph** as shown 
 
 ```mermaid
 flowchart LR
-x[x] -->mul{.}
-y[y] -->mul{.}
-mul -->|Multiply| f1(f1)
-y -->pow{^3}
-pow -->|Power| f2(f2)
-f1 -->add{+}
-f2 -->add{+}
-add -->|Add| f3(f3)
-f3 --> pow2{^2}
-pow2 -->|Power| f[f]
+    x[x] -->mul{.}
+    y[y] -->mul{.}
+    mul -->|Multiply| f1(f1)
+    y -->pow{^3}
+    pow -->|Power| f2(f2)
+    f1 -->add{+}
+    f2 -->add{+}
+    add -->|Add| f3(f3)
+    f3 --> pow2{^2}
+    pow2 -->|Power| f[f]
 ```
 
 Now, we can evaluate derivatives easily for each of these equations separately
@@ -44,16 +44,16 @@ Let's just call these **Local Derivatives** as they're defined locally on the ea
 
 ```mermaid
 flowchart LR
-x[x] --> |y| mul{.}
-y[y] --> |x| mul{.}
-mul --> f1(f1)
-y --> |3y^2| pow{^3}
-pow --> f2(f2)
-f1 --> |1| add{+}
-f2 --> |1| add{+}
-add --> f3(f3)
-f3 --> |2f3| pow2{^2}
-pow2 --> f[f]
+    x[x] --> |y| mul{.}
+    y[y] --> |x| mul{.}
+    mul --> f1(f1)
+    y --> |3y^2| pow{^3}
+    pow --> f2(f2)
+    f1 --> |1| add{+}
+    f2 --> |1| add{+}
+    add --> f3(f3)
+    f3 --> |2f3| pow2{^2}
+    pow2 --> f[f]
 ```
 
 Getting the desired **Global Derivatives** is just a matter of moving through the graph in reverse (hence the name **Reverse-mode Automatic Differentiation**). Let me demonstrate that step by step
