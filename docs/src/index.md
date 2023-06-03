@@ -20,7 +20,7 @@ $$f(x,y) = f_3^2 \tag{4}$$
 A nice way to visualise these operations is on a **computation graph** as shown below
 
 ```mermaid
-graph LR
+flowchart LR
 x[x] -->mul{.}
 y[y] -->mul{.}
 mul -->|Multiply| f1(f1)
@@ -43,7 +43,7 @@ $$\frac{\partial f(x,y)}{\partial f_3}=2f_3 \tag{8}$$
 Let's just call these **Local Derivatives** as they're defined locally on the each step. We can represent these on the graph as well
 
 ```mermaid
-graph LR
+flowchart LR
 x[x] --> |y| mul{.}
 y[y] --> |x| mul{.}
 mul --> f1(f1)
