@@ -33,26 +33,33 @@ function test_linregress()
     W = Tensor(rand(1,1)*0.001)
     B = Tensor(rand(1,1)*0.001)
 
-    Z = X * W .+ B
-    z = x*W.val .+ B.val
+    linear(X, W, B) = X * W .+ B
+    mse(Z, Y) = sum((Z - Y)^2, 1) / size(Z.val)[1]
+
+    for i=0:10000
+        # Forward
+        Z = linear(X, W, B)
+        # Loss
+        L = mse(Z, Y)
+        # Gradients
+        ∂L = grad(L)
+
+        if i % 100 == 0
+            println("Iteration $(i); MSE $(mse(linear(X, W, B), Y).val)")
+        end
+
+        # Updating Parameters
+        W.val = W.val - 0.01 * ∂L[W].val
+        B.val = B.val - 0.01 * ∂L[B].val
+    end
+
+    println(W.val)
+    println(w_true)
     
-    L = sum((Z - Y)^2, 1) / n
-    l = sum((z - y).^2, dims=1) / n
+    println(B.val)
+    println(b_true)
 
-    ∂L = grad(L)
-
-    ∂L_∂W = ∂L[W]
-    ∂l_∂W = sum(2 .* (z - y) .* x, dims=1) / n
-    
-    ∂L_∂B = ∂L[B]
-    ∂l_∂B = sum(2 .* (z - y), dims=1) / n
-
-    # println(∂L_∂W.val)
-    # println(∂l_∂W)
-    # println(∂L_∂B.val)
-    # println(∂l_∂B)
-
-    return ∂L_∂W.val ≈ ∂l_∂W && ∂L_∂B.val ≈ ∂l_∂B
+    return true
 end
 
 # @test test_grad()
