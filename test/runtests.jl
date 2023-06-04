@@ -1,20 +1,21 @@
 using Test
 using jac
 
-function test_grad()
-    a = Tensor(4)
-    b = Tensor(3)
-    c = a + b
-    d = a * c
+function test_scalar()
+    x = Tensor(4)
+    y = Tensor(3)
+    
+    f1 = x * y
+    f2 = y^3
+    f3 = f1 + f2
+    f = f3^2
 
-    ∂d_∂a = grad(d)[a]
+    gradients = grad(f)
+    ∂f_∂x = gradients[x]
+    ∂f_∂y = gradients[y]
 
-    ∂2d_∂a2 = grad(∂d_∂a)[a]
-
-    # println(∂d_∂a.val)
-    # println(∂2d_∂a2.val)
-
-    return ∂d_∂a.val[1,1] == 11 && ∂2d_∂a2.val[1,1] == 2
+    
+    return ∂f_∂x.val[1,1] == 2*(x.val[1,1]*y.val[1,1] + y.val[1,1]^3)*y.val[1,1] && ∂f_∂y.val[1,1] == 2*(x.val[1,1]*y.val[1,1] + y.val[1,1]^3)*(x.val[1,1]+3*y.val[1,1]^2)
 end
 
 
@@ -62,5 +63,5 @@ function test_linregress()
     return true
 end
 
-# @test test_grad()
-@test test_linregress()
+@test test_scalar()
+# @test test_linregress()
