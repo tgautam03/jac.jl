@@ -1,2 +1,107 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>- · jac</title><script data-outdated-warner src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../assets/documenter.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../../">jac</a></span></div><form class="docs-search" action="../../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../../">Home</a></li><li><span class="tocitem">Development</span><ul><li class="is-active"><a class="tocitem" href>-</a></li></ul></li><li><span class="tocitem">Manual</span><ul><li><a class="tocitem" href="../../user_manual/Tensor/">-</a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Development</a></li><li class="is-active"><a href>-</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>-</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/tgautam03/jac.jl/blob/master/docs/src/dev_blog/basic_scalar_example.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« Home</a><a class="docs-footer-nextpage" href="../../user_manual/Tensor/">- »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Sunday 4 June 2023 00:16">Sunday 4 June 2023</span>. Using Julia version 1.8.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>An example involving Scalars · jac</title><script data-outdated-warner src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../assets/documenter.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../../">jac</a></span></div><form class="docs-search" action="../../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../../">Home</a></li><li><span class="tocitem">Development</span><ul><li class="is-active"><a class="tocitem" href>An example involving Scalars</a><ul class="internal"><li><a class="tocitem" href="#Introduction"><span>Introduction</span></a></li><li><a class="tocitem" href="#Tensor.jl"><span><code>Tensor.jl</code></span></a></li><li><a class="tocitem" href="#Arithmetic-Operations"><span>Arithmetic Operations</span></a></li><li><a class="tocitem" href="#Evaluating-Gradients"><span>Evaluating Gradients</span></a></li></ul></li></ul></li><li><span class="tocitem">Manual</span><ul><li><a class="tocitem" href="../../user_manual/Tensor/"><code>Tensor.jl</code></a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Development</a></li><li class="is-active"><a href>An example involving Scalars</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>An example involving Scalars</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/tgautam03/jac.jl/blob/master/docs/src/dev_blog/basic_scalar_example.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="An-example-involving-Scalars"><a class="docs-heading-anchor" href="#An-example-involving-Scalars">An example involving Scalars</a><a id="An-example-involving-Scalars-1"></a><a class="docs-heading-anchor-permalink" href="#An-example-involving-Scalars" title="Permalink"></a></h1><h2 id="Introduction"><a class="docs-heading-anchor" href="#Introduction">Introduction</a><a id="Introduction-1"></a><a class="docs-heading-anchor-permalink" href="#Introduction" title="Permalink"></a></h2><p>In this post, I&#39;ll be coding up the example discussed <a href="https://github.com/tgautam03/jac.jl/blob/master/README.md">here</a>. Just as a recap, we have a function <span>$f(x,y)=(xy+y^3)^2$</span> and task is to get the partial derivatives with respect to <span>$x$</span> and <span>$y$</span>. This same function can also be written as a series of simpler operations </p><p class="math-container">\[f_1 = x \cdot y \tag{1}\]</p><p class="math-container">\[f_2 = y^3 \tag{2}\]</p><p class="math-container">\[f_3 = f_1 + f_2 \tag{3}\]</p><p class="math-container">\[f(x,y) = f_3^2 \tag{4}\]</p><p>Looking at these equations, we need a way to represent the value and derivative of each node (i.e. <span>$x$</span>, <span>$y$</span>, <span>$f_1$</span>, <span>$\cdots$</span>, <span>$f(x,y)$</span>). To facilitate this, I have to create a custom variable(ish) that has multiple attributes. An obvious choice here is to use a <code>mutable struct</code> (we need the ability to modify the attributes of this struct) and I&#39;ll name that <code>Tensor</code>. </p><h2 id="Tensor.jl"><a class="docs-heading-anchor" href="#Tensor.jl"><code>Tensor.jl</code></a><a id="Tensor.jl-1"></a><a class="docs-heading-anchor-permalink" href="#Tensor.jl" title="Permalink"></a></h2><pre><code class="language-julia hljs">mutable struct Tensor
+    val::AbstractArray  # Value of the Tensor
+    parents::Vector     # Who created this Tensor
+    chain_rules::Vector # Chain Rule to get global gradients wrt parents
+end</code></pre><ul><li><code>val</code> stores the value of the node or variable.</li><li><code>parents</code> is a list that will contain the other nodes that creates this node. It&#39;ll be empty for leaf nodes <span>$x$</span> and <span>$y$</span>.</li><li><code>chain_rules</code> is a little complicated and I&#39;ll explain it later.</li></ul><p>Now I need a way to initialise my variables <span>$x$</span> and <span>$y$</span>. This is done using a constructor.</p><pre><code class="language-julia hljs">mutable struct Tensor
+    val::AbstractArray  # Value of the Tensor
+    parents::Vector     # Who created this Tensor
+    chain_rules::Vector # Chain Rule to get global gradients wrt parents
+
+    # Constructor to initialise the Tensor (for leaf nodes)
+    function Tensor(val::Number)
+        val = [val][:,:] # Storing Scalar as a 1 X 1 Array
+        new(val, [], [])
+    end
+end</code></pre><p>I also need a way to create variables from operations. I&#39;ll just add another constructor for that.</p><pre><code class="language-julia hljs">mutable struct Tensor
+    val::AbstractArray  # Value of the Tensor
+    parents::Vector     # Who created this Tensor
+    chain_rules::Vector # Chain Rule to get global gradients wrt parents
+
+    # Constructor to initialise the Tensor (for leaf nodes)
+    function Tensor(val::Number)
+        val = [val][:,:] # Storing Scalar as an Array
+        new(val, [], [])
+    end
+
+    # Constructor to create Tensor using operations (for intermediate nodes)
+    function Tensor(val::Number, parents::Vector{Tensor}, chain_rules::Vector)
+        val = [val][:,:] # Storing Scalar as an Array
+        new(val, parents, chain_rules)
+    end
+end</code></pre><blockquote><p>Notice that chain rule is defined by the operations, so let&#39;s create the operations needed.</p></blockquote><h2 id="Arithmetic-Operations"><a class="docs-heading-anchor" href="#Arithmetic-Operations">Arithmetic Operations</a><a id="Arithmetic-Operations-1"></a><a class="docs-heading-anchor-permalink" href="#Arithmetic-Operations" title="Permalink"></a></h2><h3 id="Multiply"><a class="docs-heading-anchor" href="#Multiply">Multiply</a><a id="Multiply-1"></a><a class="docs-heading-anchor-permalink" href="#Multiply" title="Permalink"></a></h3><pre><code class="language-julia hljs">function Base.:*(T1::Tensor, T2::Tensor)
+    val = T1.val * T2.val
+    parents = [T1, T2]
+
+    # Chain Rule Functions defining global gradients wrt parents
+    dT1 = global_grad::Tensor -&gt; global_grad * transpose(T2)
+    dT2 = global_grad::Tensor -&gt; transpose(T1) * global_grad 
+    chain_rules = [dT1, dT2]
+
+    return Tensor(val, parents, chain_rules)
+end</code></pre><p>The multiply here is actually a matrix-matrix multiplication (which will work on scalars too as they&#39;re <span>$1 \times 1$</span> matrices). That is why you see transpose in the chain rule. </p><p>As side note, in vector calculus when two matrices are multiplied </p><p class="math-container">\[A = B \cdot C\]</p><p>the derivatives are</p><p class="math-container">\[\frac{\partial A}{\partial B} = C^T, \ \frac{\partial A}{\partial C} = B^T\]</p><p>and the order of multiplication in the chain rule is also maintained, i.e. <span>$C^T$</span> will be post multiplied (just as it&#39;s post multiplied in <span>$B \cdot C$</span>) and <span>$B^T$</span> will be pre multiplied.</p><blockquote><p>This also needs defining the transpose operation on the <code>Tensor</code> which you can see <a href="https://github.com/tgautam03/jac.jl/blob/master/src/ops/transpose.jl">here</a>.</p></blockquote><h3 id="Power"><a class="docs-heading-anchor" href="#Power">Power</a><a id="Power-1"></a><a class="docs-heading-anchor-permalink" href="#Power" title="Permalink"></a></h3><p>Similarly, I also defined the power operation the <code>Tensor</code>.</p><pre><code class="language-julia hljs">function Base.:^(T::Tensor, n::Number)
+	val = T.val .^ n
+	parents = [T]
+
+	# Chain Rule Functions defining global gradients wrt parents
+	dT = global_grad::Tensor -&gt; global_grad .* n .* T ^ (n-1)
+	chain_rules = [dT]
+
+	return Tensor(val, parents, chain_rules)
+end</code></pre><h3 id="Addition"><a class="docs-heading-anchor" href="#Addition">Addition</a><a id="Addition-1"></a><a class="docs-heading-anchor-permalink" href="#Addition" title="Permalink"></a></h3><p>And the addition operation as well.</p><pre><code class="language-julia hljs">function Base.:+(T1::Tensor, T2::Tensor)
+    val = T1.val + T2.val
+    parents = [T1, T2]
+
+    # Chain Rule Functions defining global gradients wrt parents
+    dT1 = global_grad::Tensor -&gt; global_grad 
+    dT2 = global_grad::Tensor -&gt; global_grad
+    chain_rules = [dT1, dT2]
+
+    return Tensor(val, parents, chain_rules)
+end</code></pre><p>Now, I can define the forward pass</p><pre><code class="language-julia hljs">x = Tensor(4)
+y = Tensor(3)
+
+f1 = x * y
+f2 = y^3
+f3 = f1 + f2
+f = f3^2</code></pre><h2 id="Evaluating-Gradients"><a class="docs-heading-anchor" href="#Evaluating-Gradients">Evaluating Gradients</a><a id="Evaluating-Gradients-1"></a><a class="docs-heading-anchor-permalink" href="#Evaluating-Gradients" title="Permalink"></a></h2><p>Let&#39;s add the backward pass capability</p><pre><code class="language-julia hljs"># Gradient of T wrt all nodes it depends upon
+function grad(T::Tensor)
+	gradients = Dict() # Dict to hold grads of T wrt all creators
+
+	function compute(node::Tensor, global_grad::Tensor)
+		for (parent, chain_rule) in zip(node.parents, node.chain_rules)
+			# Chain Rule
+			new_global_grad = chain_rule(global_grad)
+
+			# Checking if grad present or not
+			if haskey(gradients, parent)
+				gradients[parent] += new_global_grad
+			else
+				gradients[parent] = new_global_grad
+			end
+
+			# Recusive call
+			compute(parent, new_global_grad)
+		end
+	end
+
+	# Output Node
+	dT_dT = Tensor(ones(size(T.val)))
+	compute(T, dT_dT)
+
+	return gradients
+end</code></pre><p>Getting the partial derivatives using AD</p><pre><code class="language-julia hljs">x = Tensor(4)
+y = Tensor(3)
+
+# Forward Pass
+f1 = x * y
+f2 = y^3
+f3 = f1 + f2
+f = f3^2
+
+# Backward Pass
+gradients = grad(f)
+
+# Collect Gradients
+∂f_∂x = gradients[x]
+∂f_∂y = gradients[y]</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« Home</a><a class="docs-footer-nextpage" href="../../user_manual/Tensor/"><code>Tensor.jl</code> »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Sunday 4 June 2023 03:09">Sunday 4 June 2023</span>. Using Julia version 1.8.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
