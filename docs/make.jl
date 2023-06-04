@@ -6,7 +6,11 @@ makedocs(
     format = Documenter.HTML(),
     modules = [jac],
     pages = [
-        "Home" => "index.md"
+        "Home" => "index.md",
+        "Development" => Any["dev_blog/basic_scalar_example.md",
+        ],
+        "Manual" => Any["user_manual/Tensor.md",
+        ],
     ],
 )
 
