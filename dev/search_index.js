@@ -1,3 +1,3 @@
 var documenterSearchIndex = {"docs":
-[{"location":"#JAC","page":"Home","title":"JAC","text":"","category":"section"}]
+[{"location":"#JAC","page":"Home","title":"JAC","text":"","category":"section"},{"location":"","page":"Home","title":"Home","text":"I would recommend going through the short theoretical introduction to Automatic Differentiation explained here before moving forward with the implementation details.","category":"page"},{"location":"","page":"Home","title":"Home","text":"The documentation is divided into two broad sections:","category":"page"},{"location":"","page":"Home","title":"Home","text":"Development: Here you'll find a more story like blogs showing the development of JAC over time (one step at a time).\nManual: Description of each struct, function, etc so that you don't have to dig through the code base to find how it's implemented.","category":"page"}]
 }
